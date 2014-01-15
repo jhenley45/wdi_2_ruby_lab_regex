@@ -18,7 +18,7 @@ def valid_phone_numbers(string)
 end
 
 def area_codes(string)
-	#string.scan(//)
+	string.scan(/(?<!-)[6-9]{1}\d{2}-/).map {|word| word[0,3]}
 end
 
 def email_addresses(string)
@@ -30,5 +30,5 @@ def zip_codes(string)
 end
 
 def hex_colors(string)
-	string.scan(/(?:#)[a-f,0-9]{6}/).map {|word| word[1,6]}
+	string.scan(/(?<=#)[a-f,0-9]{6}/)
 end
